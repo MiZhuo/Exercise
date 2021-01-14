@@ -11,17 +11,16 @@ spring:
     port: 6379
     password: aimiaomiao
     database: 0
-    lettuce:
+    jedis:
       pool:
         max-active: 8
         max-wait: -1ms
         max-idle: 8
         min-idle: 0
     timeout: 3000ms
-  data:
-    elasticsearch:
-      repositories:
-        enabled: true
+  elasticsearch:
+    rest:
+      uris: http://114.215.185.138:9200
 
 mybatis:
   mapper-locations:
