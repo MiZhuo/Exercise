@@ -40,4 +40,4 @@ jwt:
   tokenHeader: Authorization #JWT存储的请求头
   secret: mySecret #JWT加解密使用的密钥
   expiration: 7200 #JWT的超期限时间(60*60*2)
-  tokenHead: Bearer  #JWT负载中拿到开头
+  tokenHead: Bearer #JWT负载中拿到开头

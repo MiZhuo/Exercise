@@ -17,6 +17,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 import site.mizhuo.mall.component.JwtAuthenticationTokenFilter;
 import site.mizhuo.mall.component.RestAuthenticationEntryPoint;
 import site.mizhuo.mall.component.RestfulAccessDeniedHandler;
+import site.mizhuo.mall.service.impl.UmsAdminServiceImpl;
 
 /**
  * @author: Mizhuo
@@ -27,6 +28,9 @@ import site.mizhuo.mall.component.RestfulAccessDeniedHandler;
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
+
+    @Autowired
+    UmsAdminServiceImpl adminServiceImpl;
 
     @Autowired
     private RestfulAccessDeniedHandler restfulAccessDeniedHandler;
@@ -69,7 +73,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(userDetailsService())
+        auth.userDetailsService(adminServiceImpl)
                 .passwordEncoder(passwordEncoder());
     }
 
