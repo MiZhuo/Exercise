@@ -14,7 +14,7 @@ import java.util.List;
 
 /**
  * @author: Mizhuo
- * @time: 2021/1/14 10:04 下午
+ * @time: 2021/1/14 10:04  下午
  * @description: 搜索商品管理Controller
  */
 @Api(tags = "搜索商品管理")
@@ -62,7 +62,7 @@ public class EsProductController {
     public CommonResult<CommonPage<EsProduct>> search(@RequestParam(required = false) String keyword,
                                                       @RequestParam(required = false, defaultValue = "0") Integer pageNum,
                                                       @RequestParam(required = false, defaultValue = "5") Integer pageSize) {
-        Page<EsProduct> esProductPage = esProductService.search(keyword, pageNum, pageSize);
+        Page<EsProduct> esProductPage = esProductService.search(keyword, pageNum, pageSize);  
         return CommonResult.success(CommonPage.restPage(esProductPage));
     }
 

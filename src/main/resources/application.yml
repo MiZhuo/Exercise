@@ -21,6 +21,11 @@ spring:
   elasticsearch:
     rest:
       uris: http://114.215.185.138:9200
+  data:
+    mongodb:
+      host: 114.215.185.138
+      port: 27017
+      database: mall
 
 mybatis:
   mapper-locations:
